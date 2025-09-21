@@ -11,11 +11,7 @@ class dBOperation:
     """
       This class shall be used for handling all the SQL operations.
 
-      Written By: iNeuron Intelligence
-      Version: 1.0
-      Revisions: None
-
-      """
+    """
     def __init__(self):
         self.path = 'Training_Database/'
         self.badFilePath = "Training_Raw_files_validated/Bad_Raw"
@@ -26,16 +22,12 @@ class dBOperation:
     def dataBaseConnection(self,DatabaseName):
 
         """
-                Method Name: dataBaseConnection
-                Description: This method creates the database with the given name and if Database already exists then opens the connection to the DB.
-                Output: Connection to the DB
-                On Failure: Raise ConnectionError
+        Method Name: dataBaseConnection
+        Description: This method creates the database with the given name and if Database already exists then opens the connection to the DB.
+        Output: Connection to the DB
+        On Failure: Raise ConnectionError
 
-                 Written By: iNeuron Intelligence
-                Version: 1.0
-                Revisions: None
-
-                """
+        """
         try:
             conn = sqlite3.connect(self.path+DatabaseName+'.db')
 
@@ -51,12 +43,12 @@ class dBOperation:
 
     def createTableDb(self,DatabaseName,column_names):
         """
-                        Method Name: createTableDb
-                        Description: This method creates a table in the given database which will be used to insert the Good data after raw data validation.
-                        Output: None
-                        On Failure: Raise Exception
+        Method Name: createTableDb
+        Description: This method creates a table in the given database which will be used to insert the Good data after raw data validation.
+        Output: None
+        On Failure: Raise Exception
 
-                        """
+        """
         try:
             conn = self.dataBaseConnection(DatabaseName)
             c=conn.cursor()
@@ -117,15 +109,11 @@ class dBOperation:
     def insertIntoTableGoodData(self,Database):
 
         """
-                               Method Name: insertIntoTableGoodData
-                               Description: This method inserts the Good data files from the Good_Raw folder into the
-                                            above created table.
-                               Output: None
-                               On Failure: Raise Exception
-
-                                Written By: iNeuron Intelligence
-                               Version: 1.0
-                               Revisions: None
+        Method Name: insertIntoTableGoodData
+        Description: This method inserts the Good data files from the Good_Raw folder into the
+        above created table.
+        Output: None
+        On Failure: Raise Exception
 
         """
 
@@ -165,16 +153,10 @@ class dBOperation:
     def selectingDatafromtableintocsv(self,Database):
 
         """
-                               Method Name: selectingDatafromtableintocsv
-                               Description: This method exports the data in GoodData table as a CSV file. in a given location.
-                                            above created .
-                               Output: None
-                               On Failure: Raise Exception
-
-                                Written By: iNeuron Intelligence
-                               Version: 1.0
-                               Revisions: None
-
+        Method Name: selectingDatafromtableintocsv
+        Description: This method exports the data in GoodData table as a CSV file. in a given location above created .
+        Output: None
+        On Failure: Raise Exception
         """
 
         self.fileFromDb = 'Training_FileFromDB/'
