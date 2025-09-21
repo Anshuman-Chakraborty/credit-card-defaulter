@@ -26,12 +26,26 @@ The goal is to help financial institutions minimize credit risk and make better 
    cd credit-card-defaulter-prediction
    ```
 
-2. Install required dependencies:
+2.Create a virtual environment (optional but recommended):
+
+   On Windows:
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
+   On macOS/Linux:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Run the notebook:  
+
+4. Run the notebook:  
    Open the Jupyter Notebook or Python script to view and execute the code.
 
 ## 🧠 How It Works
